@@ -12,7 +12,13 @@
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 </head>
 <body>
-	<h1>Welcome to Client Portal!!!</h1>
-
+<div class="container">
+	<div class="row">
+		<h1>Welcome to Client Portal!!!</h1>
+	</div>
+	<div class="row">
+		<textarea>Welcome to Client Portal!!!</textarea>
+	</div>
+</div>
 </body>
 </html>
