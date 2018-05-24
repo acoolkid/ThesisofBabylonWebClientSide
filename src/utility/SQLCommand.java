@@ -1,8 +1,11 @@
 package utility;
 
 public interface SQLCommand {
-	String LOGIN_USER = "SELECT username, password FROM clientaccounts";
+	String LOGIN_USER = "SELECT username, password FROM adminaccounts";
 	
+	
+	String INSERT_UPLOAD = "INSERT INTO "
+			+"upload(filePath) VALUES(?)";
 	
 	String GET_UPLOAD = "SELECT *"
 			+ "upload";

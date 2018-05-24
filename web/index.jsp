@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>Client Login</h1>
+	<h1>Patient Login</h1>
 	
 	<form action="login" method="post">  
 		<input class="u-full-width" type="text" name="username" id="username" placeholder="Username"></input>
