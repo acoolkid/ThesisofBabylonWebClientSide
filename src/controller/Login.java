@@ -89,7 +89,7 @@ SessionMap<String,String> sessionmap;
 	
 	public List<String> getfiles(){
 		
-		File folder = new File("E:/Patient Medical Record/"+username);
+		File folder = new File("E:/Patient Medical Data/"+username);
 		//File folder = new File("C:\\Users\\glenn_ailen\\Desktop");
 		File[] listOfFiles = folder.listFiles();
 

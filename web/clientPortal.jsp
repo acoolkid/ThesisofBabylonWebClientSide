@@ -24,7 +24,7 @@
 
 	
 		   <% for(String file : (ArrayList<String>)request.getAttribute("filelist")) { %>
-		 <a href="<%=file%>"><%=file%></a><%}%> 
+		 <a href="file:///E:/Patient Medical Data/<%=session.getAttribute("username")%>/<%=file%>"><%=file%></a><%}%> 
 		       
             <tr>      
                <td><a href="${file}">${file}</a><td>
