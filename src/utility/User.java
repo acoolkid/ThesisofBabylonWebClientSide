@@ -17,7 +17,7 @@ public class User {
 					   .getConnection("jdbc:mysql://localhost:3306/codersofbabylon2","root","");  
 			     
 			   PreparedStatement ps = con.prepareStatement(  
-			     "SELECT * FROM admin WHERE username=? and password=?"); 
+			     "SELECT * FROM patient WHERE patientid=? and pinID=?"); 
 		
 			   ps.setString(1,username);  
 			   ps.setString(2,password);  

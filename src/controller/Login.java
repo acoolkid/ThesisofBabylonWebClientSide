@@ -1,5 +1,9 @@
 package controller;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
@@ -33,19 +37,36 @@ SessionMap<String,String> sessionmap;
 
 	public String execute(){  
 		System.out.println(username);
-	    sessionmap.put("username", username);
-	    /*if(User.validate(username, password)){  
-	        return "success";  
+		String status;
+	    if(User.validate(username, password)){  
+	    	sessionmap.put("username", username);
+	    	
+			  try{  
+				  Class.forName("com.mysql.jdbc.Driver");  
+					
+				   Connection con = DriverManager
+						   .getConnection("jdbc:mysql://localhost:3306/codersofbabylon2","root","");  
+				     
+				   PreparedStatement ps = con.prepareStatement(  
+				     "SELECT filePath FROM upload WHERE patientid=?"); 
+			
+				   ps.setString(1,username);  
+				   ResultSet rs = ps.executeQuery();  
+				   sessionmap.put("filePath", rs.getString("filePath")); 
+				  }catch(Exception e){e.printStackTrace();}  
+			  
+	    	status = "success";  
 	    }  
 	    else{  
-	        return "error";  
-	    }  */
-	    return "success";
+	        status ="error";  
+	    } 
+	    return status;
 	}  
 	
 	public void setSession(Map map) {  //This happens before execute
 	    sessionmap=(SessionMap)map;  
 	    sessionmap.put("login","true");
+	    //sessionmap.put("username", username);
 	}  
 	  
 	public String logout(){  

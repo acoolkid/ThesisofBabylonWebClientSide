@@ -5,9 +5,11 @@
     
 <struts>
 	<package name="default" extends="struts-default">
+	
 	<!-- For the user to be logged in and able to access the patient.  -->
 		<action name="login" class="controller.Login">
 			<result name="success">/clientPortal.jsp</result>
+			<result name="error">/index.jsp</result>
 		</action>
 	
 		<!-- Logouts the user. -->
@@ -15,10 +17,7 @@
 			<result name="success">/index.jsp</result>
 		</action>
 		
-		<!-- Admin Profile -->
-		<action name="profile" class="controller.Profile">  
-			<result name="success" >/portal.jsp</result>  
-			<result name="error" >/index.jsp</result>  
-		</action>  
+		<!-- PDF -->
+		<!--  <action name="itextreport" class="org.websparrow.ReportAction"></action> -->
 	</package>
 </struts>
