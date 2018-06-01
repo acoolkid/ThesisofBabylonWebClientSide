@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
@@ -20,8 +21,16 @@
 	</div>
 	<div class="row">
 		<div class=containter>
-			<button href="E://Patient Medical Data/<%=session.getAttribute("username")%>/<%=session.getAttribute("filepath")%>"> VISIT FILE</button>
-		</div>
+
+	
+		   <% for(String file : (ArrayList<String>)request.getAttribute("filelist")) { %>
+		 <a href="<%=file%>"><%=file%></a><%}%> 
+		       
+            <tr>      
+               <td><a href="${file}">${file}</a><td>
+            </tr>
+        <%  %>
+		        
 	</div>
 	
 	
