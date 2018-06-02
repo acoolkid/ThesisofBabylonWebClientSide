@@ -9,6 +9,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+<link rel="stylesheet" type="text/css" href="css/basedesign.css" />
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 </head>
 <body>
@@ -17,7 +18,20 @@
 		<h1>Welcome to Client Portal!!!</h1>
 	</div>
 	<div class="row">
-		<textarea>Welcome to Client Portal!!!</textarea>
+		<div class="four columns">
+				<form action="print.jsp" method="post">
+						<input name="id" id="id" type="hidden" value="<%= session.getAttribute("patientid") %>">
+						<input class="button u-pull-left" value="Print" type="submit">
+				</form>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="six columns">
+			<textarea class="u-full-width dontresize textboxheight" name="patientDetails" placeholder="Basic Patient Information will show up here. "></textarea>
+		</div>
+		<div class="six columns">
+			<textarea class="u-full-width dontresize textboxheight" name="medicalRecords" placeholder="The Medical Data of the Patient will show up here. "></textarea>
+		</div>
 	</div>
 </div>
 </body>

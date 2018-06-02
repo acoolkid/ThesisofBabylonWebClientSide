@@ -34,13 +34,12 @@ SessionMap<String,String> sessionmap;
 	public String execute(){  
 		System.out.println(username);
 	    sessionmap.put("username", username);
-	    /*if(User.validate(username, password)){  
+	    if(User.validate(username, password)){  
 	        return "success";  
 	    }  
 	    else{  
 	        return "error";  
-	    }  */
-	    return "success";
+	    } 
 	}  
 	
 	public void setSession(Map map) {  //This happens before execute
